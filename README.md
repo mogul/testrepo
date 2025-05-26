@@ -1,5 +1,6 @@
 # Categorical exclusions prototype
 
+Here's an important update.
 
 ## Getting Started
 
