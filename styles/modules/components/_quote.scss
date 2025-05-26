@@ -1,0 +1,86 @@
+/* The POTUS quote that appears on the homepage */
+
+.quote-block {
+  display: flex;
+  flex-direction: column;
+  padding: 0;
+
+  @include breakpoint(medium) {
+    flex-direction: row;
+  }
+
+  .quote-block__image-container {
+    @include breakpoint(medium) {
+      min-height: 50vw;
+      min-width: 50vw;
+    }
+
+    img {
+      height: 100%;
+      margin: 0;
+      object-fit: cover;
+      width: 100%;
+    }
+  }
+
+  .quote-block__content {
+    background: url("../_img/icons/radiating-lines.svg") center;
+    background-color: $white-sands;
+    background-size: cover;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: var(--acc-spacing-4);
+
+    @include breakpoint(medium) {
+      padding: 4rem;
+    }
+
+    @include breakpoint(large) {
+      padding: 6rem;
+    }
+
+    @include breakpoint(xlarge) {
+      padding: 7.75rem;
+    }
+
+    .quote-block__quote {
+      margin-top: 0;
+      @include acc-font-size('fs-5');
+
+      @include breakpoint(large) {
+        margin-bottom: var(--acc-spacing-4);
+      }
+    }
+
+    .quote-block__attribution {
+      align-items: flex-start;
+      display: flex;
+
+      .quote-block__star-icon {
+        margin-right: .5rem;
+      }
+
+      .quote-block__author {
+        color: $blue-spring;
+        @include acc-font-size('fs-3');
+        font-weight: bold;
+        margin: 0 0 var(--acc-spacing-2);
+      }
+      .quote-block__details {
+        font-style: italic;
+        @include acc-font-size('fs-2');
+        line-height: 1.6rem;
+        margin-top: 0;
+
+        a {
+          color: $acadia-green-dark;
+
+          img {
+            max-width: 1rem;
+          }
+        }
+      }
+    }
+  }
+}

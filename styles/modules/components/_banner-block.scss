@@ -1,0 +1,41 @@
+/* The container that holds the page title on many pages */
+
+.banner-block {
+  align-items: center;
+  background-color: $saguaro-green;
+  display: flex;
+  justify-content: center;
+  padding: var(--acc-spacing-3) 0;
+  text-transform: uppercase;
+
+  @include breakpoint(large) {
+    padding: var(--acc-spacing-6) 0;
+  }
+
+  &__heading {
+    align-items: center;
+    color: $big-bend-blue;
+    display: flex;
+    font-family: $fontstack-fairweather;
+    @include acc-font-size('fs-8');
+    font-weight: 900;
+    line-height: .9;
+    margin: 0;
+    text-align: center;
+  }
+
+  &__heading::before,
+  &__heading::after {
+    background: url('../_img/icons/banner-arrow-left.svg') no-repeat;
+    content: "";
+    display: inline-block;
+    height: 45px;
+    width: 55px;
+    margin: 0 1.5rem;
+    padding: 0 1rem;
+  }
+
+  &__heading::after {
+    transform: rotate(180deg);
+  }
+}

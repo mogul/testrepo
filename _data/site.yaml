@@ -1,0 +1,26 @@
+title: Categorical Exclusions
+# email:
+description: |-
+  Proof of concept website for a comprehensive list of the Federal agencies' CEs.
+  This resource is intended to assist agencies in revising their CEs, as well
+  as to help CEQ in reviewing proposed revisions, by identifying how similar
+  classes of actions are treated in the CEs established by various agencies.
+
+# Site Navigation
+primary_navigation:
+  - name: Search
+    url: /search/
+
+#################################################################
+#
+# Digital Analytics Program (DAP) configuration
+#
+#################################################################
+# dap:
+#   agency:
+#   subagency:
+
+# Configuration for Google Analytics
+# ga:
+#   ua:
+

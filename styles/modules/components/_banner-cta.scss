@@ -1,0 +1,103 @@
+/* The "be the change" banner that appears in the footer of most pages */
+
+.banner-cta-block {
+  background-color: $glacier-blue;
+  padding: 1.5rem 0 calc(1.5rem + 25px);
+
+  @include breakpoint(large) {
+    padding: 5.3125rem 0 calc(5.3125rem + 25px);
+  }
+
+  &__bg {
+    background: url('../_img/multi-blue-wave-padding.svg'), $white-sands;
+    background-size: contain;
+    background-repeat: repeat-x;
+    padding: 4.75rem $acc-padding-small;
+
+    @include breakpoint(large) {
+      padding: var(--acc-spacing-3) $acc-padding-large;
+    }
+  }
+
+  &__content-inner {
+    display: flex;
+    flex-direction: column;
+
+    @include breakpoint(large) {
+      align-items: center;
+      flex-direction: row;
+      justify-content: space-between;
+      margin: auto;
+      max-width: 650px;
+    }
+  }
+
+  &__content-wrapper {
+    max-width: 1140px;
+    margin: auto;
+    padding: var(--acc-spacing-5);
+    background-color: $blue-spring;
+    border-radius: 18px;
+    text-align: center;
+    color: $white-sands;
+
+    .banner-cta-block__text {
+      @include breakpoint(large) {
+        text-align: left;
+      }
+    }
+
+    h3 {
+      color: $white-sands;
+      @include acc-font-size('fs-8');
+      margin: 0 0 var(--acc-spacing-3);
+      text-transform: uppercase;
+    }
+
+    p {
+      margin-top: 0;
+      @include acc-font-size('fs-3');
+    }
+
+    .banner-cta-block__sub-heading {
+      margin-bottom: var(--acc-spacing-2);
+      color: $glacier-blue;
+      @include acc-font-size('fs-6');
+      text-decoration: line-through;
+    }
+
+    .banner-cta-block__content {
+      color: $white-sands;
+      @include acc-font-size('fs-4');
+      font-weight: 300;
+    }
+
+    .usa-button {
+      padding: 1rem 1.5rem; /* replace with spacing function */
+      @include acc-font-size('fs-4');
+    }
+  }
+}
+
+.banner-cta-block--alt-color {
+  background-color: $blue-spring;
+
+  .banner-cta-block__bg {
+    background-image: url('../_img/multi-red-wave-padding.svg');
+  }
+
+  .banner-cta-block__content-wrapper {
+    background-color: $acadia-green;
+  }
+
+  .banner-cta-block__sub-heading {
+    color: $white-sands;
+    text-decoration: none;
+  }
+
+  a.usa-button.btn.btn--special:hover {
+    background-color: $blue-spring;
+    border-color: $blue-spring;
+    color: $white-sands;
+  }
+}

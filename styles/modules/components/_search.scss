@@ -1,0 +1,117 @@
+/* The Join page search box */
+
+.search-block {
+  &.body-content {
+    margin-bottom: 0;
+  }
+
+  &__content-wrapper {
+    background-color: $blue-spring;
+    border-radius: 18px;
+    color: $white-sands;
+    padding: var(--acc-spacing-5);
+    text-align: left;
+    display: flex;
+    flex-direction: column;
+
+    &__search-wrapper {
+      width: 100%;
+      max-width: 750px;
+      margin: 0 auto;
+
+      form {
+        align-items: flex-start;
+        display: flex;
+        flex-direction: column;
+        gap: var(--acc-spacing-3);
+        justify-content: space-between;
+
+        div {
+          width: 100%;
+        }
+
+        @include breakpoint(large) {
+          align-items: flex-end;
+          flex-direction: row;
+
+          div:last-of-type {
+            width: auto;
+          }
+        }
+      }
+
+      label {
+        color: $white-sands;
+        font-family: $fontstack-mundial;
+        @include acc-font-size('fs-3');
+        font-weight: 600;
+      }
+
+      input {
+        display: block;
+        height: 50px;
+        border-radius: 8px;
+        border: 2px solid $big-bend-blue;
+        width: 100%;
+        max-width: 100%;
+        padding-left: 45px;
+        background: $white-sands url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none'%3E%3Cpath d='M11 19C15.4183 19 19 15.4183 19 11C19 6.58172 15.4183 3 11 3C6.58172 3 3 6.58172 3 11C3 15.4183 6.58172 19 11 19Z' stroke='%23003A73' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3Cpath d='M21.0004 21L16.6504 16.65' stroke='%23003A73' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E") no-repeat 13px center;
+      }
+
+      button {
+        align-items: center;
+        background: $saguaro-green;
+        border-color: $saguaro-green;
+        color: $big-bend-blue-dark;
+        display: flex;
+        font-family: $fontstack-mundial;
+        @include acc-font-size('fs-3');
+        font-weight: 600;
+        height: 50px;
+        justify-content: center;
+        width: 100%;
+
+        @include breakpoint(large) {
+          width: auto;
+        }
+
+        &:hover,
+        &:active {
+          border-color: $white-sands;
+        }
+        &:focus {
+          outline-color: $acadia-green;
+          outline-offset: .25rem;
+        }
+      }
+    }
+
+    &__heading {
+      text-align: left;
+    }
+
+    &__form-wrapper {
+      padding-top: var(--acc-spacing-2);
+    }
+
+    &__button-wrapper {
+      display: flex;
+      padding: .625rem var(--acc-spacing-4);
+      justify-content: center;
+      align-items: center;
+    }
+
+    p {
+      margin-top: 0;
+      color: $white-sands;
+      font-family: $fontstack-mundial;
+      @include acc-font-size('fs-5');
+      font-weight: 600;
+    }
+
+    .tip a {
+      @include acc-font-size('fs-2');
+      color: $saguaro-green;
+    }
+  }
+}

@@ -1,0 +1,146 @@
+/* The Join page search filters */
+
+.filters-block {
+  padding: 0;
+  margin: var(--acc-spacing-4) auto;
+  border-bottom: 1px solid $saguaro-green;
+
+   @include breakpoint(medium) {
+    margin-bottom: 0;
+    border-bottom: 0;
+  }
+
+  &__listings {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-end;
+    margin-bottom: var(--acc-spacing-4);
+
+    @include breakpoint(medium) {
+      margin-bottom: 0;
+    }
+  }
+
+  &__listings__positions{
+    flex-grow: 8;
+    text-align: left;
+    font-family: $fontstack-mundial;
+    @include acc-font-size('fs-5');
+    font-style: normal;
+    font-weight: 600;
+    display: block;
+    color: $big-bend-blue;
+
+     &__loading-spin {
+      content: '';
+      display: inline-block;
+      height: 26px;
+      width: 20px;
+      margin-right: 0.5rem;
+      background-image: url("../_img/icons/spinner.svg") !important;
+      background-repeat: no-repeat;
+      animation: rotate-animation 3s infinite linear;
+      @keyframes rotate-animation {
+        
+          0% {
+            transform: rotate(0deg);
+          }
+
+          50% {
+            transform: rotate(180deg);
+          }
+
+          100% {
+            transform: rotate(360deg);
+          }
+
+        }
+
+        @include breakpoint(medium) {
+          display: none;
+        }
+      
+    }
+  }
+
+  &__listings button {
+    background: transparent;
+    border: 0;
+    color: $acadia-green-dark;
+    text-align: right;
+    cursor: pointer;
+    font-family: $fontstack-mundial;
+    padding: 0;
+    text-decoration: underline;
+
+      @include breakpoint(medium) {
+        margin-bottom: 0;
+      }
+
+      @include breakpoint(large) {
+        height: 40px;
+        padding: var(--acc-spacing-2) 0;
+        width: 8rem;
+      }
+
+      &:hover {
+        color: $big-bend-blue;
+      }
+
+      &:focus {
+        outline-color: $acadia-green;
+      }
+    }
+
+  &__content-wrapper {
+    flex-direction: column;
+    gap: 1rem;
+
+    @include breakpoint(medium) {
+      align-items: center;
+      justify-content: space-between;
+      display: flex;
+      flex-direction: row;
+      gap: var(--acc-spacing-4);
+      visibility: visible;
+      padding: var(--acc-spacing-4) 0;
+    }
+
+    &__filter {
+      width: 100%;
+      margin-bottom: var(--acc-spacing-4);
+
+      @include breakpoint(medium) {
+        margin-bottom: 0;
+      }
+    }
+
+    .usa-form {
+      max-width: 100%;
+      width: 100%;
+    }
+
+    label {
+      color: $big-bend-blue;
+      font-family: $fontstack-mundial;
+      font-weight: 600;
+      @include acc-font-size('fs-3');
+      line-height: 1;
+    }
+
+    select {
+      border-radius: 8px;
+      border: 2px solid $big-bend-blue-dark;
+      background: $white-sands url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='25' height='24' viewBox='0 0 25 14' fill='none'%3E%3Cpath d='M6.3335 9L12.3335 15L18.3335 9' stroke='%2307074B' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E") no-repeat 13px center;
+      background-position: 100% 25%;
+      height: 2.9rem;
+    }
+
+    &__filter {
+      &__clear {
+          padding-top: var(--acc-spacing-3);
+      }
+    }
+
+  }
+}

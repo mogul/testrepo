@@ -1,0 +1,39 @@
+---
+pagination:
+  data: exclusions
+  size: 1
+  alias: exclusion
+permalink: "exclusions/{{ exclusion.longUnit | slugify }}-{{ exclusion.id }}.html"
+layout: layouts/wide
+---
+
+{% assign e = exclusion %}
+{{ e.unit | set_title }}
+
+{% banner_block "Categorical exclusion" %}
+<article class="body-content opportunity">
+    <header class="opportunity__header">
+        <h1 class="opportunity__title">{{ e.longUnit }}</h1>
+
+        <a class="usa-button btn btn--ext-link" href="{{ e.originUrl }}" target=”_blank”>{{ e.origin }}</a>
+        {% opens_in_new_tab %}
+    </header>
+    <div class="position__details">
+        <section class="position__summary">
+            <h2>Categorical Exclusion</h2>
+            <h3>{{ e.context }}</h3>
+            <h3>Exclusion Text</h3>
+            <p>{{ e.exclusion }}</p>
+        </section>
+        <hr aria-hidden="true">
+        <section>
+            <h2>Disclaimer</h2>
+            <p>The CE Explorer tool is not an authoritative source and creates no rights or obligations. Federal
+                agencies and stakeholders should review the relevant agency's NEPA procedures for applicable
+                extraordinary circumstances and to ensure that a CE is currently available for use. For ease of use, a
+                link to each agency's NEPA procedures and CEs is provided along with the text of the CE.</p>
+        </section>
+
+    </div>
+
+</article>

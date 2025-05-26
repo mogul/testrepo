@@ -1,0 +1,20 @@
+---
+layout: layouts/default
+---
+
+{% comment %}
+  This is used in blog posts. The index page can be found at blog/index.html
+{% endcomment %}
+{% banner_block "news" %}
+<article class="news">
+  <div class="body-content title">
+    <h1>{{title}}</h1>
+    <span>{{ date | date: '%B %d, %Y' }}</span>
+  </div>
+  <div class="body-content post-body">
+    {{ content }}
+  </div>
+  <div class="body-content post-footer">
+    <hr aria-hidden="true">
+  </div>
+</article>

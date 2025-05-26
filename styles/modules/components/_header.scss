@@ -1,0 +1,396 @@
+.usa-overlay.is-visible {
+  opacity: 0;
+}
+
+.usa-js-mobile-nav--active {
+  overflow-y: scroll;
+
+  .usa-menu-btn {
+    background-color: $white-sands !important;
+    border-color: $white-sands !important;
+    color: $arches-red-dark;
+  }
+
+  .usa-menu-btn__icon {
+    background-image: url("../_img/icons/x.svg") !important;
+    margin-left: .5rem;
+  }
+}
+
+.usa-banner__button[aria-expanded="true"]::before {
+  background-color: transparent;
+}
+
+.usa-banner__button::after,
+.usa-banner__button:hover::after {
+  top: 3px;
+}
+
+.usa-banner__header-action::after,
+.usa-banner__button::after,
+.usa-banner__button[aria-expanded=true]::after {
+  background-color: $white-sands;
+}
+.usa-banner__header-action:hover::after,
+.usa-banner__button:hover::after,
+.usa-banner__button[aria-expanded=true]:hover::after {
+  background-color: $white-sands;
+}
+
+.usa-banner__header-text,
+.usa-banner__button-text,
+.usa-banner__header-action {
+  @include acc-font-size('fs-1');
+}
+
+.usa-header {
+  background-color: $big-bend-blue;
+  padding: var(--acc-spacing-4);
+
+  @include breakpoint(large) {
+    padding: var(--acc-spacing-3);
+  }
+
+  &::after {
+    display: none;
+  }
+
+  &__container {
+    @include breakpoint(nav) {
+      align-items: center;
+      display: flex;
+      justify-content: space-between;
+      margin: 0 auto;
+      max-width: 1140px;
+    }
+  }
+
+  .usa-menu-btn {
+    align-items: center;
+    background-color: rgba(0, 0, 0, 0);
+    border: 3px $arches-red solid;
+    border-radius: 25px;
+    display: flex;
+    flex-direction: row;
+    font-weight: 700;
+    padding: 14px 20px;
+    text-transform: unset;
+    @include acc-font-size('fs-3');
+
+    &:focus {
+      outline: 0.25rem solid $white-sands;
+      outline-offset: .25rem;
+    }
+
+    @include breakpoint(nav) {
+      display: none;
+    }
+
+    .usa-menu-btn__icon {
+      background-image: url("../_img/icons/menu.svg");
+      height: 25px;
+      margin-left: .5rem;
+      width: 25px;
+    }
+  }
+
+  .usa-navbar {
+    border: none;
+    height: unset;
+
+    .usa-logo {
+      width: 125px;
+      height: 125px;
+      margin: 0;
+
+      a:focus {
+        outline-color: $white-sands;
+        outline-offset: 0.25rem;
+      }
+
+      img {
+        max-height: 100%;
+      }
+    }
+  }
+
+  .usa-nav {
+    background-color: $big-bend-blue;
+    bottom: unset;
+    left: 0;
+    margin-top: var(--acc-spacing-4);
+    text-align: right;
+    width: 100%;
+    top: 0;
+    position: relative;
+
+    @include breakpoint(nav) {
+      margin: 0;
+      width: unset;
+      top: unset;
+      height: calc(100% - 248px);
+      position: static;
+    }
+
+    .usa-accordion {
+      font-family: $fontstack-mundial;
+    }
+
+    &__primary-item {
+      border: none;
+      position: relative;
+
+      a, button {
+        &:hover,
+        &:active {
+          background-color: transparent;
+        }
+
+        @include breakpoint(nav) {
+          border: solid 3px $arches-red;
+          border-radius: 30px;
+
+          &:hover,
+          &:active {
+            background-color: $white-sands;
+            border-color: $white-sands;
+
+            span {
+              color: $big-bend-blue;
+            }
+          }
+
+          &:focus {
+            outline-color: $white-sands;
+            outline-offset: 0.25rem;
+          }
+        }
+      }
+
+      button {
+        background-color: rgba(0, 0, 0, 0);
+        padding: .75rem 1.25rem;
+
+        @include breakpoint(nav) {
+          text-align: left;
+          margin-right: var(--acc-spacing-2);
+        }
+
+        &:focus {
+          @include breakpoint(nav) {
+            outline-color: $white-sands;
+            outline-offset: 0.25rem;
+          }
+        }
+      }
+
+      button[aria-expanded="false"] span::after,
+      button[aria-expanded="true"] span::after {
+        height: 20px;
+        background: url("../_img/icons/chevron-down.svg") no-repeat;
+        mask: unset;
+        width: 20px;
+      }
+
+      button[aria-expanded="false"] span::after {
+        top: 25px;
+        @include breakpoint(nav) {
+          top: 14px;
+          right: 11px;
+        }
+      }
+
+      button[aria-expanded="true"] span::after {
+        transform: rotate(180deg);
+        top: 21px;
+
+        @include breakpoint(nav) {
+          top: 9px;
+          right: 15px;
+        }
+      }
+
+      button:last-of-type {
+        @include breakpoint(nav) {
+          padding-right: 1.5rem; // Should not be dynamic
+        }
+
+        @include breakpoint(large) {
+
+        }
+      }
+
+      @media screen and (max-width: 1023px) {
+        button[aria-expanded="false"] span::after,
+        button[aria-expanded="true"] span::after {
+          right: 140px;
+        }
+
+        button[aria-expanded="true"] span::after {
+          right: 143px;
+        }
+      }
+
+      @include breakpoint(nav) {
+        button[aria-expanded="false"]:hover span::after,
+        button[aria-expanded="true"]:hover span::after {
+          background: url("../_img/icons/chevron-down-blue.svg") no-repeat;
+        }
+      }
+    }
+
+    &__primary-item:not(:last-of-type) {
+      @include breakpoint(nav) {
+        margin-right: var(--acc-spacing-3);
+      }
+    }
+
+    &__primary-item a {
+      @include breakpoint(nav) {
+        padding: .75rem 1.25rem;
+      }
+    }
+
+    &__link.usa-current::before {
+      background: url(../_img/icons/bullet-point-green.svg);
+      content: "";
+      display: inline-block;
+      height: 26px;
+      margin-right: .625rem;
+      width: 23px;
+
+      @include breakpoint(nav) {
+        display: none;
+      }
+    }
+
+    &__link span,
+    &__submenu-item a {
+      color: $white-sands;
+      font-weight: 700;
+    }
+
+    &__link:hover,
+    &__submenu-item a:hover {
+      background-color: unset;
+    }
+
+    &__link span {
+      @include acc-font-size('fs-6');
+
+      @include breakpoint(nav) {
+        @include acc-font-size('fs-3');
+        padding: 0;
+      }
+    }
+
+    &__submenu-item a {
+      @include acc-font-size('fs-5');
+
+      &:not(.usa-button):not(.usa-current) {
+        color: $white-sands;
+
+        &:hover {
+          color: $white-sands;
+        }
+      }
+    }
+
+    &__link.usa-current::after {
+      display: none;
+    }
+
+    &__submenu {
+      @include breakpoint(nav) {
+        background-color: $white-sands;
+        border-radius: 18px;
+        display: block;
+        right: 0px;
+        margin-top: var(--acc-spacing-4);
+        padding: var(--acc-spacing-3);
+      }
+
+      li {
+        @include breakpoint(nav) {
+          text-align: left;
+        }
+
+        &:last-of-type {
+          margin-bottom: 0;
+
+          a {
+            margin-bottom: 0;
+          }
+        }
+      }
+
+      a {
+        @include breakpoint(nav) {
+          color: $big-bend-blue !important;
+          @include acc-font-size('fs-3');
+          border: 0;
+          border-radius: 0;
+          padding: 0;
+          margin-bottom: 1rem;
+        }
+      }
+
+      a:hover {
+        @include breakpoint(nav) {
+          color: $acadia-green !important;
+        }
+      }
+
+      a:focus {
+        @include breakpoint(nav) {
+          outline-color: $acadia-green !important;
+        }
+      }
+    }
+
+    &__submenu::before {
+      display: none;
+
+      @include breakpoint(nav) {
+        content: "";
+        display: block;
+        width: 18px;
+        height: 10px;
+        position: absolute;
+        top: -10px;
+        right: 25px;
+      }
+    }
+
+    &__submenu[hidden] {
+      @include breakpoint(nav) {
+        display: none;
+      }
+    }
+
+    &__submenu-item {
+      border: none;
+    }
+  }
+
+  @include breakpoint(nav) {
+    a.usa-current {
+      background-color: $white-sands;
+      border-color: $white-sands;
+
+      span {
+        color: $big-bend-blue;
+      }
+    }
+  }
+
+
+  .usa-accordion__button {
+    text-align: right;
+  }
+}
+
+.usa-header + .usa-section,
+.usa-header + main {
+  border-top: none;
+}

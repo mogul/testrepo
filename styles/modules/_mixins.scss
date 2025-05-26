@@ -1,0 +1,52 @@
+/* Use this media query mixin whenever you need to style something at a specific breakpoint. */
+
+@mixin breakpoint($breakpoint) {
+  $breakpoints: (
+    medium: 768px,
+    nav: 1024px,
+    large: 1140px,
+    xlarge: 1440px,
+  );
+
+  @if map-has-key($breakpoints, $breakpoint) {
+    $bp-px-value: map-get($breakpoints, $breakpoint);
+
+    @media (min-width: $bp-px-value) {
+      @content;
+    }
+  }
+}
+
+/* This mixin sets the font-size function based on breakpoints */
+
+@mixin acc-font-size($fs) {
+  font-size: get-acc-font-size(small-screens, $fs);
+
+  @include breakpoint(large) {
+    font-size: get-acc-font-size(large-screens, $fs);
+  }
+}
+
+/* Use this mixin for setting default width/spacing styles on containers inside of an article element */
+
+@mixin acc-page-layout($width) {
+  $widths: (
+    wide: 1140px,
+    narrow:750px,
+  );
+  @if map-has-key($widths, $width) {
+    max-width: map-get($widths, $width);
+  }
+  margin: var(--acc-spacing-7) var(--acc-spacing-4);
+  padding: 0;
+
+  @include breakpoint(medium) {
+    margin: var(--acc-spacing-7) auto;
+    padding: 0 var(--acc-spacing-4);
+  }
+
+  &:last-of-type {
+    margin-bottom: 0;
+    padding-bottom: var(--acc-spacing-8);
+  }
+}

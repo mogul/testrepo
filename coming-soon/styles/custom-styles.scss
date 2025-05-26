@@ -1,0 +1,498 @@
+@use "brand-colors" as *;
+@use "brand-typefaces" as *;
+@use "breakpoints" as *;
+@use "spacing" as *;
+
+.usa-banner {
+  background-color: $brand-color-blue-spring;
+
+  a, p, span {
+    color: $brand-color-white-sands;
+  }
+}
+
+// BASE
+body > section {
+  background-color: $brand-color-white-sands;
+  padding: $primary-padding-small;
+
+  @include breakpoint(medium) {
+    padding: $primary-padding-medium;
+  }
+
+  @include breakpoint(large) {
+    padding: 2rem $primary-padding-large;
+  }
+
+  @include breakpoint(xlarge) {
+    padding: 2rem $primary-padding-xlarge;
+  }
+
+  h1, h2, h3 {
+    color: $brand-color-big-bend-blue;
+    font-family: $brand-typeface-fairweather;
+    text-transform: uppercase;
+  }
+
+  h4, h5, h6, p, a, span {
+    font-family: $brand-typeface-mundial;
+  }
+
+  h1 {
+    font-size: 3rem;
+  }
+
+  p {
+    font-size: 1.375rem;
+    line-height: 2rem;
+  }
+
+  a {
+    color: $brand-color-acadia-green;
+  }
+}
+
+.usa-banner__header-action::after,
+.usa-banner__button::after,
+.usa-banner__button[aria-expanded="true"]::after {
+  background-color: $brand-color-white-sands;
+}
+
+
+.ext-link {
+  height: 15px;
+  margin-bottom: -2px;
+  width: 15px;
+}
+
+// COMING SOON PAGE
+.banner {
+  background-color: $brand-color-acadia-green;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  padding: 0;
+
+  .banner__content {
+    align-items: center;
+    display: flex;
+    flex-direction: row;
+  }
+
+  h3 {
+    color: $brand-color-white-sands;
+    font-size: 1.75rem;
+    text-align: center;
+    line-height: 1.5625rem;
+    width: 80%;
+  }
+
+  a {
+    color: inherit;
+    font-family: inherit;
+  }
+
+  svg {
+    margin: 0 1rem;
+  }
+}
+
+.cs-hero {
+  padding: 0;
+
+  @include breakpoint(medium) {
+    height: 880px;
+  }
+
+  .cs-hero__image {
+    object-fit: cover;
+    object-position: 25% center;
+
+    @include breakpoint(medium) {
+      width: 100%;
+      height: 100%;
+    }
+  }
+
+  .cs-hero__logo {
+    margin-top: -6.5rem;
+
+    @include breakpoint(medium) {
+      margin-top: -6rem;
+    }
+  }
+
+  .cs-hero__content {
+    padding: $primary-padding-small;
+
+    @include breakpoint(medium) {
+      background-color: $brand-color-white-sands;
+      border-radius: 18px;
+      left: 43%;
+      position: relative;
+      top: -70%;
+      width: 50%;
+      z-index: 1;
+    }
+
+    @include breakpoint(large) {
+      width: 40%;
+      left: 46%;
+    }
+  }
+
+  h1 {
+    color: $brand-color-blue-spring;
+    margin: 0;
+
+    @include breakpoint(medium) {
+      margin-top: 2rem;
+    }
+  }
+
+  .usa-button {
+    background-color: $brand-color-acadia-green;
+    border-radius: 30px;
+    padding: 1.25rem;
+  }
+}
+
+.cs-summary {
+  background-color: $brand-color-big-bend-blue;
+  border-radius: 18px 18px 0 0;
+  color: $brand-color-saguaro-green;
+  font-size: 1.75rem;
+  font-weight: bold;
+  line-height: 2.25rem;
+  padding-bottom: 100px;
+
+  @include breakpoint(medium) {
+    margin-top: -1rem;
+    position: relative;
+  }
+
+  p {
+    font-size: 1.75rem;
+
+    @include breakpoint(medium) {
+      font-size: 2.25rem;
+      line-height: 2.7rem;
+    }
+
+    @include breakpoint(medium) {
+      font-size: 2.625rem;
+      line-height: 3.15rem;
+    }
+  }
+
+}
+
+.cs-details__waves {
+  background-image: url("../_img/icons/wave-sands.png");
+  background-repeat: repeat-x;
+  height: 52px;
+  margin-top: -52px;
+
+  @include breakpoint(medium) {
+    position: relative;
+    z-index: 1;
+  }
+}
+
+.cs-details, .cs-gallery, .cs-learn-more, .cs-logos {
+  background: url("../_img/sand-texture.jpg");
+  background-size: contain;
+}
+
+.cs-details {
+  background-color: #edebd8;
+  display: flex;
+  flex-direction: column;
+  padding: 0 $primary-padding-small 3rem;
+
+  @include breakpoint(medium) {
+    flex-direction: row;
+    padding: 3rem $primary-padding-medium;
+  }
+
+  @include breakpoint(large) {
+    padding: 3rem $primary-padding-large;
+  }
+
+  @include breakpoint(xlarge) {
+    padding: 3rem $primary-padding-xlarge;
+  }
+
+  .col-one, .col-two {
+    @include breakpoint(medium) {
+      max-width: calc(50% - 2rem);
+    }
+  }
+
+  .col-one {
+    padding-top: 2.5rem;
+
+    @include breakpoint(medium) {
+      padding: 0;
+      margin-right: 4rem;
+    }
+  }
+
+  p:first-of-type {
+    margin-top: 0;
+  }
+
+  ul {
+    list-style: none;
+    line-height: 1.75rem;
+    margin-bottom: 0;
+    padding: 0;
+  }
+
+  li {
+    display: flex;
+    margin-bottom: 1rem;
+
+    &:last-of-type {
+      margin-bottom: 0;
+    }
+  }
+
+  li:before {
+    content: url('../_img/icons/bullet-point-icon.svg');
+    margin-right: 1rem;
+  }
+}
+
+.cs-gallery {
+  background-color: #edebd8;
+  display: flex;
+  height: 240px;
+  padding: 0;
+
+  @include breakpoint(medium) {
+    height: 577px;
+  }
+
+  @include breakpoint(large) {
+    height: 439px;
+  }
+
+  img {
+    border-radius: 18px;
+    margin-right: 2rem;
+    object-fit: cover;
+
+    &:last-of-type {
+      margin-right: 0;
+    }
+
+    &:nth-child(odd) {
+      min-width: calc(35vw - 1rem);
+
+      @include breakpoint(large) {
+        min-width: calc(17.5vw - 1.5rem);
+      }
+    }
+
+    &:nth-child(even) {
+      max-height: 80%;
+      min-width: calc(65vw - 1rem);
+
+      @include breakpoint(large) {
+        min-width: calc(32.5vw - 1.5rem);
+      }
+    }
+  }
+}
+
+.cs-learn-more {
+  background-color: #edebd8;
+  display: flex;
+  flex-direction: column;
+
+  @include breakpoint(medium) {
+    align-items: start;
+    flex-direction: row;
+    justify-content: space-evenly;
+  }
+
+  @include breakpoint(large) {
+    padding-top: 6rem;
+    padding-bottom: 6rem;
+  }
+
+  .cs-learn-more__heading {
+    align-items: center;
+    display: flex;
+    flex-direction: row;
+    font-size: 1.5rem;
+    margin: 1rem 0;
+
+    @include breakpoint(medium) {
+      margin: 0;
+    }
+
+    img {
+      height: 1.5rem;
+      margin-right: 1rem;
+    }
+
+    h2 {
+      margin: 0;
+    }
+  }
+
+  .cs-learn-more__list {
+    font-weight: 600;
+    margin-top: 0;
+    padding-left: 1.2rem;
+
+    @include breakpoint(medium) {
+      max-width: 60%;
+    }
+
+    li {
+      line-height: 1.875rem;
+    }
+
+    li:first-of-type {
+      margin-bottom: 1rem;
+    }
+
+    li::marker {
+      color: $brand-color-acadia-green;
+    }
+  }
+}
+
+.cs-image-quote {
+  display: flex;
+  flex-direction: column;
+  padding: 0;
+
+  @include breakpoint(medium) {
+    flex-direction: row;
+  }
+
+  .cs-image-quote__image-container {
+    @include breakpoint(medium) {
+      min-height: 50vw;
+      min-width: 50vw;
+    }
+
+    img {
+      height: 100%;
+      margin: 0 .5rem 0 0;
+      object-fit: cover;
+      width: 100%;
+    }
+  }
+
+  .cs-image-quote__content {
+    background: url("../_img/icons/radiating-lines.svg") center;
+    background-size: cover;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: $primary-padding-small;
+
+    @include breakpoint(medium) {
+      padding: 4rem;
+    }
+
+    @include breakpoint(large) {
+      padding: 6rem;
+    }
+
+    @include breakpoint(xlarge) {
+      padding: 7.75rem;
+    }
+
+    .cs-image-quote__quote {
+      margin-top: 0;
+    }
+
+    .cs-image-quote__attribution {
+      align-items: flex-start;
+      display: flex;
+
+      .cs-image-quote__star-icon {
+        margin-right: .5rem;
+      }
+
+      .cs-image-quote__author {
+        color: $brand-color-blue-spring;
+        font-size: 1.125rem;
+        font-weight: bold;
+        margin: 0;
+      }
+      .cs-image-quote__details {
+        font-style: italic;
+        font-size: 1rem;
+        line-height: 1.6rem;
+        margin-top: 0;
+      }
+    }
+  }
+}
+
+.cs-logos {
+  background-color: #edebd8;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+
+  img {
+    height: 28%;
+    width: 28%;
+    margin: 2%;
+
+    @include breakpoint(medium) {
+      height: 13%;
+      width: 13%;
+      margin: 1%;
+    }
+
+    @include breakpoint(large) {
+      height: 10%;
+      width: 10%;
+      margin: 0 1%;
+    }
+  }
+
+
+  img:nth-of-type(1), img:nth-of-type(2) {
+    margin-top: 6%;
+
+    @include breakpoint(medium) {
+      margin-top: 3%;
+    }
+
+    @include breakpoint(large) {
+      margin-top: 1.5%;
+    }
+  }
+}
+
+.cs-footer {
+  align-items: center;
+  background-color: $brand-color-big-bend-blue;
+  color: $brand-color-white-sands;
+  display: flex;
+  flex-direction: column;
+
+  img {
+    height: 150px;
+    margin-bottom: 1.5rem;
+    width: 150px;
+  }
+
+  p {
+    font-size: 1rem;
+    line-height: 1.6rem;
+    margin: 0;
+    text-align: center;
+  }
+}

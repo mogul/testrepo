@@ -1,0 +1,37 @@
+@use "sass:map";
+
+/* This function allows you to declare a font size using a token that automatically adjusts its sizing based on screen size (for example, "fs-10" is 96px on smaller screens, and grows to 128px on larger screens). Use for _all_ font sizes. */
+
+@function get-acc-font-size($size, $level) {
+  $small-screens: (
+    "fs-10": 6rem,    // 96px
+    "fs-9": 4.5rem,   // 72px
+    "fs-8": 3rem,     // 48px
+    "fs-7": 2.5rem,   // 40px
+    "fs-6": 2rem,     // 32px
+    "fs-5": 1.5rem,   // 24px
+    "fs-4": 1.25rem,  // 20px
+    "fs-3": 1.125rem, // 18px
+    "fs-2": 1rem,     // 16px
+    "fs-1": .8125rem, // 13px
+  );
+
+  $large-screens: (
+    "fs-10": 8rem,    // 128px
+    "fs-9": 6rem,     // 96px
+    "fs-8": 4.5rem,   // 72px
+    "fs-7": 3rem,     // 48px
+    "fs-6": 2.25rem,  // 36px
+    "fs-5": 1.5rem,   // 24px
+    "fs-4": 1.25rem,  // 20px
+    "fs-3": 1.125rem, // 18px
+    "fs-2": 1rem,     // 16px
+    "fs-1": .8125rem, // 13px
+  );
+
+  @if $size == 'small-screens' {
+    @return map.get($small-screens, $level)
+  } @else {
+    @return map.get($large-screens, $level)
+  }
+}

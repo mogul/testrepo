@@ -1,0 +1,82 @@
+.not-found-content {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  padding: $acc-padding-small;
+  margin: auto;
+  max-width: 750px;
+
+  @include breakpoint(large) {
+    padding: 2.5rem 1.5rem;
+  }
+
+  h2 {
+    color: $big-bend-blue;
+    font-family: $fontstack-mundial;
+    @include acc-font-size('fs-5');
+    margin-top: 0;
+    text-align: center;
+  }
+
+  h2:first-of-type {
+    margin-top: 1.5rem;
+  }
+
+  h2:last-of-type {
+    margin-bottom: 0;
+  }
+
+  img {
+    height: 90px;
+    margin: var(--acc-spacing-3) auto;
+  }
+}
+
+.not-found-link-block {
+  background: center url('../_img/multi-blue-wave-padding-dark.svg') repeat-x;
+  display: flex;
+  font-family: $fontstack-mundial;
+  @include acc-font-size('fs-4');
+  flex-direction: column;
+  padding: $acc-padding-small;
+
+  @include breakpoint(large) {
+    padding: 2rem $acc-padding-large;
+    flex-direction: row;
+  }
+
+  &__cta {
+    align-items: center;
+    background-color: $blue-spring;
+    border-radius: 18px;
+    display: flex;
+    flex-direction: column;
+    padding: 4rem;
+
+    img {
+      height: 52px;
+      margin-bottom: 1.5rem;
+      width: 52px;
+    }
+
+    a {
+      color: $white-sands;
+      font-weight: 700;
+      line-height: 1.4;
+      text-align: center;
+    }
+  }
+
+  &__cta:first-of-type {
+    margin-bottom: 3rem;
+
+    @include breakpoint(large) {
+      margin-bottom: 0;
+      margin-right: 3rem;
+    }
+  }
+}
+
+.not-found-spacer {
+  height: calc(3rem + 25px);
+}

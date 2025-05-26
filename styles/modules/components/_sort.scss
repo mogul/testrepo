@@ -1,0 +1,47 @@
+/* The Join page sort feature */
+
+.sort-block {
+
+  &.body-content {
+    margin: var(--acc-spacing-4);
+
+    @include breakpoint(large) {
+        margin-left: auto;
+        margin-right: auto;
+    }
+  }
+
+  &__content-wrapper {
+    label {
+      color: $big-bend-blue;
+      font-family: $fontstack-mundial;
+
+      @include breakpoint(medium) {
+          font-size: acc-font-size('fs-4');
+      }
+    }
+
+    select {
+      border-radius: 8px;
+      border: 2px solid $big-bend-blue;
+      background: $white-sands url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='25' height='24' viewBox='0 0 25 14' fill='none'%3E%3Cpath d='M6.3335 9L12.3335 15L18.3335 9' stroke='%2307074B' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E") no-repeat 13px center;
+      background-position: 100% 25%;
+      height: 2.9rem
+    }
+
+    .sort-container {
+      display: flex;
+      align-items: center;
+      gap: var(--acc-spacing-2);
+      justify-content: center;
+
+      @include breakpoint(medium) {
+        justify-content: right;
+      }
+
+      .usa-select {
+        margin-top: 0;
+      }
+    }
+  }
+}

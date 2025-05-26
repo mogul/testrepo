@@ -1,0 +1,15 @@
+$breakpoints: (
+  medium: 768px,
+  large: 1024px,
+  xlarge: 1440px,
+);
+
+@mixin breakpoint($breakpoint) {
+  @if map-has-key($breakpoints, $breakpoint) {
+    $bp-px-value: map-get($breakpoints, $breakpoint);
+
+    @media (min-width: $bp-px-value) {
+      @content;
+    }
+  }
+}

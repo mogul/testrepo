@@ -1,0 +1,315 @@
+/* Global font sizes and styling, colors, spacing, and restyling of default HTML elements/USWDS components. */
+
+body {
+  background-color: $white-sands-dark;
+  background-image: url($sand-texture);
+  background-size: 30%;
+  color: $big-bend-blue-dark;
+  font-family: $fontstack-mundial;
+  line-height: 1.5;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: $fontstack-fairweather;
+  line-height: .9;
+  color: $big-bend-blue;
+}
+
+h1, h2 {
+  font-weight: 900;
+}
+
+p, span, li {
+  @include acc-font-size('fs-3');
+}
+
+p {
+  margin: var(--acc-spacing-2) 0; /* replace with spacing function */
+}
+
+a {
+  color: $acadia-green-dark;
+  font-weight: 600;
+  text-decoration: underline;
+}
+
+ul {
+  margin-bottom: var(--acc-spacing-3); /* replace with spacing function */
+}
+
+select,
+.usa-select,
+.usa-input {
+  color: $big-bend-blue-dark;
+  font-family: $fontstack-mundial;
+  line-height: 1;
+}
+
+.usa-banner {
+  background-color: $blue-spring;
+
+  .usa-accordion {
+    font-family: $fontstack-mundial;
+  }
+
+  &__inner {
+    justify-content: center;
+    text-align: center;
+
+    .grid-col-fill:nth-of-type(2) {
+      flex: unset;
+    }
+  }
+
+  a, p, span {
+    color: $white-sands;
+  }
+}
+
+input:not([disabled]):focus,
+select:not([disabled]):focus,
+textarea:not([disabled]):focus {
+  outline-color: $acadia-green;
+  outline-offset: .25rem;
+}
+
+// Captions
+.caption, .attribution {
+  text-align: center;
+  line-height: 1.6;
+  @include acc-font-size('fs-1');
+}
+
+.caption {
+  color: $blue-spring;
+  font-weight: 700;
+
+  &--less-margin {
+    margin-bottom: var(--acc-spacing-2);
+  }
+}
+
+.attribution {
+  font-style: italic;
+  margin-bottom: var(--acc-spacing-5);
+}
+
+// Links
+.usa-link {
+  color: $acadia-green;
+  font-weight: 600;
+  text-decoration: underline;
+
+  &:hover {
+    color: $acadia-green;
+    text-decoration: none;
+  }
+  &:visited {
+    color: $blue-spring;
+  }
+  &:focus {
+    outline: 0.25rem solid $acadia-green-dark;
+  }
+
+  &--darker {
+    color: $acadia-green-dark;
+
+    &:focus {
+      border-color: $acadia-green-dark;
+    }
+  }
+}
+
+main {
+  .body-content {
+    @include acc-page-layout(wide);
+  }
+}
+
+main a[href^="http"],
+main a[href^="https://"] {
+  &::after {
+    content: url($icon_ext-link-green);
+    padding-left: 2px;
+    position: relative;
+    bottom: -5px;
+  }
+}
+
+.site-footer__bottom-links a[href^="http"],
+.site-footer__bottom-links a[href^="https://"] {
+  &::after {
+    content: url($icon_ext-link-sands);
+    padding-left: 4px;
+    position: relative;
+    bottom: -5px;
+  }
+}
+
+input:not([disabled]):focus,
+select:not([disabled]):focus,
+textarea:not([disabled]):focus {
+  outline: 0.25rem solid $acadia-green-dark;
+}
+
+// Buttons
+
+.usa-button {
+  background-color: $acadia-green;
+  border: 3px solid $acadia-green;
+  border-radius: 100px;
+  color: $white-sands;
+  font-family: $fontstack-mundial;
+  @include acc-font-size('fs-3');
+  padding: var(--acc-spacing-3) var(--acc-spacing-4);
+
+  @include breakpoint(large) {
+    padding: var(--acc-spacing-2) var(--acc-spacing-3);
+  }
+
+  &:hover,
+  &:active {
+    background-color: $white-sands;
+    border: 3px solid $acadia-green;
+    color: $acadia-green-dark;
+  }
+
+  &:focus {
+    outline-color: $acadia-green-dark;
+    outline-offset: .25rem;
+  }
+}
+
+a {
+  &.usa-button.btn {
+    &.btn--ext-link {
+      align-self: flex-start;
+      align-items: center;
+      display: flex;
+      justify-content: center;
+      padding: var(--acc-spacing-1) var(--acc-spacing-3) calc(var(--acc-spacing-1) + 2px);
+
+      &:after {
+        content: url($icon_ext-link-sands);
+        padding-left: var(--acc-spacing-1);
+      }
+      &:hover {
+        &:after {
+          content: url($icon_ext-link-green);
+        }
+      }
+    }
+
+    &.btn--special {
+      background-color: $white-sands;
+      border-color: $white-sands;
+      color: $blue-spring;
+
+      &:hover {
+        background-color: $glacier-blue;
+        border-color: $glacier-blue;
+        color: $big-bend-blue;
+      }
+    }
+  }
+}
+
+ul, ol {
+  li {
+    margin-bottom: var(--acc-spacing-1); /* replace with spacing function */
+  }
+}
+
+hr {
+  background-image: url($single-turquoise-wave);
+  border: 0;
+  height: 14px;
+  margin: 0;
+}
+
+main {
+  background-color: $white-sands-dark;
+  background-image: url($sand-texture);
+  background-size: 30%;
+  .body-content {
+    @include acc-page-layout(wide);
+  }
+}
+
+// Pagination
+.usa-pagination {
+  &__item {
+    a {
+      background-color: $white-sands;
+      border: 2px solid $arches-red;
+      border-radius: 8px;
+      padding: var(--acc-spacing-2);
+      color: $big-bend-blue-dark;
+
+      &:hover,
+      &:active {
+        border-color: $acadia-green-dark;
+        color: $acadia-green-dark;
+      }
+
+      &:focus {
+        outline-color: $big-bend-blue;
+        outline-offset: .125rem;
+        outline-width: 2px;
+      }
+    }
+  }
+
+  .usa-current {
+    border-radius: 8px;
+
+    a {
+      background-color: $big-bend-blue;
+      border-color: $big-bend-blue;
+      color: $white-sands;
+
+      &:hover,
+      &:active {
+        background-color: $acadia-green-dark;
+        border-color: $acadia-green-dark;
+      }
+
+      &:focus {
+        outline-color: $big-bend-blue;
+        outline-offset: .125rem;
+        outline-width: 2px;
+      }
+    }
+  }
+
+  .usa-pagination__overflow {
+    color: $big-bend-blue-dark;
+  }
+
+  &__next-page {
+    margin-left: var(--acc-spacing-1);
+  }
+  &__previous-page {
+    margin-right: var(--acc-spacing-1);
+  }
+}
+
+.usa-alert {
+  background-color: #faf3d1;
+  border: none;
+  font-family: $fontstack-mundial;
+  padding-bottom: 18px;
+  text-align: center;
+}
+
+// Static pages
+.static-content {
+  @include acc-page-layout(narrow);
+
+  // Contact form
+  @include breakpoint(medium) {
+    iframe#signup-frame {
+      width: 750px !important;
+    }
+  }
+}

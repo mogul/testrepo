@@ -1,0 +1,45 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://beta.acc.gov/exclusions_schema.json",
+  "title": "Categorical exclusions",
+  "type": "object",
+  "unevaluatedProperties": false,
+  "required": ["id", "unit", "origin", "originUrl", "exclusion"],
+  "description": "Exclusions for environmental impact assessments.",
+  "properties": {
+    "id": {
+      "description": "Unique ID",
+      "type": "integer"
+    },
+    "unit": {
+      "description": "The agency, bureau, or other organization responsible for the categorical exclusion",
+      "type": "string",
+      "minLength": 3
+    },
+    "origin": {
+      "description": "The policy, law, regulation, or other resource from which the categorical exclusion is drawn",
+      "type": "string",
+      "minLength": 3
+    },
+    "originUrl": {
+      "description": "A link to the policy, law, regulation, or other resource from which the categorical exclusion is drawn",
+      "type": "string",
+      "minLength": 3
+    },
+    "context": {
+      "description": "Front matter or explanatory material from the origin",
+      "type": "string",
+      "minLength": 3
+    },
+    "additionalContext": {
+      "description": "Sub-sections, sub-categories, or other markers within a larger document",
+      "type": "string",
+      "minLength": 0
+    },
+    "exclusion": {
+      "description": "The text of a categorical exclusion",
+      "type": "string",
+      "minLength": 3
+    }
+  }
+}

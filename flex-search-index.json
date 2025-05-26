@@ -1,0 +1,9 @@
+{
+  "reg": "{\"0\":1}",
+  "title.cfg": "{\"doc\":0,\"opt\":1}",
+  "title.map": "[{\"forestry\":[0]},{\"technician\":[0]},{},{},{},{},{},{},{}]",
+  "title.ctx": "[{}]",
+  "description.cfg": "{\"doc\":0,\"opt\":1}",
+  "description.map": "[{\"performs\":[0]},{\"wildland\":[0]},{\"fire\":[0],\"suppresion\":[0]},{\"management\":[0],\"and\":[0]},{\"control\":[0],\"operates\":[0]},{\"maintains\":[0]},{\"specialized\":[0],\"tools\":[0]},{\"equipment\":[0]},{}]",
+  "description.ctx": "[{}]"
+}

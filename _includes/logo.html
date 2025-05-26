@@ -1,0 +1,9 @@
+<div>
+  {% comment %}Placeholder until there is a logo (at which point you can delete this li) {% endcomment %}
+  <li class="usa-nav__primary-item">
+    {% assign basedir = page.url | remove_first: '/' | split: '/' | first | lstrip %}
+    {% assign linkdir = nav_item.url | replace: "/", "" | lstrip %}
+    <a class="usa-nav__link{% if basedir == linkdir %} usa-current{% endif %} text-no-underline"
+      href="{% link '' %}"><span>Home</span></a>
+  </li>
+</div>

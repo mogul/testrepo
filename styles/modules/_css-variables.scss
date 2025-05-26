@@ -1,0 +1,24 @@
+/* These spacing variables are used for margins and padding across the site. They automatically adjust size for smaller vs. larger screens (for example, spacing-8 is 64px on smaller screens, and grows to 96px on larger screens). If you need something to be the same amount of spacing on any screen size, use rems directly instead of these spacing variables. */
+
+:root {
+  // ACC Spacing
+  --acc-spacing-8: 4rem;      // 64px
+  --acc-spacing-7: 3rem;      // 48px
+  --acc-spacing-6: 2.5rem;    // 40px
+  --acc-spacing-5: 2rem;      // 32px
+  --acc-spacing-4: 1.5rem;    // 24px
+  --acc-spacing-3: 1rem;      // 16px
+  --acc-spacing-2: .5rem;     // 8px
+  --acc-spacing-1: .25rem;    // 4px
+
+  @include breakpoint(large) {
+    --acc-spacing-8: 6rem;    // 96px
+    --acc-spacing-7: 4rem;    // 64px
+    --acc-spacing-6: 3rem;    // 48px
+    --acc-spacing-5: 2.5rem;  // 40px
+    --acc-spacing-4: 2rem;    // 32px
+    --acc-spacing-3: 1.5rem;  // 24px
+    --acc-spacing-2: 1rem;    // 16px
+    --acc-spacing-1: .5rem;   // 8px
+  }
+}

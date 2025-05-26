@@ -1,0 +1,115 @@
+article.opportunity {
+  @include acc-page-layout("wide");
+
+  h1, h2, h3 {
+    font-family: $fontstack-mundial;
+    line-height: 1.3;
+  }
+
+  h2 {
+    margin: var(--acc-spacing-3) 0; /* replace with spacing function  */
+  }
+
+  h3 {
+    margin: var(--acc-spacing-1) 0; /* replace with spacing function */
+  }
+
+  header {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+
+    h1 {
+      color: $big-bend-blue;
+      @include acc-font-size('fs-7');
+      margin-top: 0;
+      margin-bottom: var(--acc-spacing-1);
+    }
+
+    p {
+      color: $acadia-green-dark;
+      margin-top: 0;
+    }
+
+    a.btn {
+      margin: var(--acc-spacing-2) auto var(--acc-spacing-4);
+    }
+  }
+
+  .position__details {
+    h2 {
+      @include acc-font-size('fs-5');
+    }
+
+    h3 {
+      @include acc-font-size('fs-4');
+    }
+
+    p {
+      @include acc-font-size('fs-3');
+    }
+
+    .project-summary {
+      margin-bottom: var(--acc-spacing-4);
+    }
+
+    .right-side {
+      ul {
+        list-style-type: none;
+        padding: 0;
+      }
+    }
+
+    .position__footer {
+      display: flex;
+      flex-direction: column;
+    }
+
+    small {
+      @include acc-font-size('fs-1');
+      display: block;
+      max-width: 668px;
+      padding: var(--acc-spacing-5) 0;
+      font-style: italic;
+    }
+  }
+
+  section {
+    padding-bottom: var(--acc-spacing-3);
+    &.border-bottom {
+      border-bottom-color: $saguaro-green;
+    }
+
+    .date-alert {
+      background: transparent url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M12 22C17.5228 22 22 17.5228 22 12C22 6.47715 17.5228 2 12 2C6.47715 2 2 6.47715 2 12C2 17.5228 6.47715 22 12 22Z" stroke="%23DE5851" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M12 8V12" stroke="%23DE5851" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M12 16H12.01" stroke="%23DE5851" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>') no-repeat 0px center;
+      padding-left: 30px;
+    }
+
+    a.btn.btn--ext-link {
+      display: none;
+    }
+
+  }
+
+  hr {
+    margin-bottom: var(--acc-spacing-3);
+  }
+
+  footer {
+    margin-top: var(--acc-spacing-5);
+
+    h3 {
+      font-family: $fontstack-mundial;
+      text-align: center;
+      font-weight: 600;
+    }
+    div.a2a_kit {
+      width: 66%;
+      margin: 0 auto;
+    }
+  }
+
+  .add-to-any {
+    margin-bottom: var(--acc-spacing-4);
+  }
+}

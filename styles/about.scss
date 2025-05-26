@@ -1,0 +1,136 @@
+.about-page-hero {
+  .hero.dark {
+    background-color: $blue-spring;
+
+    .hero-container {
+      padding: 4rem 0 8rem;
+
+      @include breakpoint(large) {
+        padding-top: 0;
+      }
+
+      h1 {
+        color: $white-sands;
+        margin: 0 0 var(--acc-spacing-6) 0;
+        padding: 0 var(--acc-spacing-4);
+
+        @include breakpoint(large) {
+          text-align: left;
+        }
+      }
+    }
+  }
+}
+
+.about-content-wrapper {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.about-content {
+  padding: var(--acc-spacing-4);
+
+  @include breakpoint(large) {
+    max-width: 750px;
+  }
+
+  hr {
+    margin-top: var(--acc-spacing-2);
+    margin-bottom: var(--acc-spacing-2);
+  }
+
+  h2 {
+    @include acc-font-size('fs-7');
+    font-weight: 900;
+    line-height: .9;
+    text-transform: uppercase;
+    margin-bottom: var(--acc-spacing-3);
+  }
+
+  h2:first-of-type {
+    margin-top: 0;
+  }
+
+  .about-subheading {
+    font-family: $fontstack-mundial;
+    font-weight: 600;
+    line-height: 1.3;
+    @include acc-font-size('fs-5');
+    margin-bottom: var(--acc-spacing-5);
+    margin-top: 0;
+  }
+
+  p {
+    line-height: 1.6;
+    margin-bottom: var(--acc-spacing-5);
+  }
+
+  img {
+    border-radius: 18px;
+  }
+
+  .caption--less-margin {
+    margin-bottom: var(--acc-spacing-2);
+  }
+
+}
+
+.partner-logos-block {
+  display: flex;
+  flex-direction: column;
+  padding: var(--acc-spacing-3) var(--acc-spacing-3) calc(var(--acc-spacing-6) + 25px);
+
+  &__container {
+    align-self: center;
+    max-width: 1140px;
+  }
+
+  p {
+    color: $big-bend-blue;
+    text-align: center;
+    font-family: $fontstack-mundial;
+    @include acc-font-size('fs-5');
+    font-weight: 600;
+    line-height: 1.3;
+  }
+
+  &__logos {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+
+    img {
+      height: 28%;
+      width: 28%;
+      margin: 2%;
+
+      @include breakpoint(medium) {
+        height: 13%;
+        width: 13%;
+        margin: 1%;
+      }
+
+      @include breakpoint(large) {
+        height: 10%;
+        width: 10%;
+        margin: 0 1%;
+      }
+    }
+
+
+    img:nth-of-type(1), img:nth-of-type(2) {
+      margin-top: 6%;
+
+      @include breakpoint(medium) {
+        margin-top: 3%;
+      }
+
+      @include breakpoint(large) {
+        margin-top: 1.5%;
+      }
+    }
+  }
+}

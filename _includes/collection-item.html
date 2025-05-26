@@ -1,0 +1,14 @@
+<li class="usa-collection__item">
+  <div class="usa-collection__body">
+    <h3 class="usa-collection__heading">
+      <a class="usa-link" href="{{ post.url | url }}" >{{ post.data.title }}</a >
+    </h3>
+    <p class="usa-collection__meta-item">
+      <time datetime="{{ post.date | date: '%Y-%m-%dT12:00:00+01:00' }}">
+        {{ post.date | date: '%B %d, %Y' }}
+      </time>
+    </p>
+    <div class="usa-collection__description"> {{ post.templateContent | truncatewords: 25 }} </div>
+    <a class="usa-link" href="{{ post.url | url }}">Read More</a>
+  </div>
+</li>

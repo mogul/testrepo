@@ -1,0 +1,101 @@
+/* For pages like Privacy Policy, Accessibility, etc. */
+
+.static-page {
+  display: flex;
+  flex-direction: column;
+
+  .static-text-container {
+    align-self: center;
+    padding: var(--acc-spacing-8) 1.5rem calc(5.5rem + 25px);
+
+    @include breakpoint(large) {
+      max-width: 750px;
+    }
+  }
+
+  h2 {
+    font-family: $fontstack-fairweather;
+    @include acc-font-size('fs-7');
+    font-weight: 900;
+  }
+
+  h3 {
+    color: $big-bend-blue;
+    font-family: $fontstack-mundial;
+    @include acc-font-size('fs-5');
+    line-height: 1.5;
+  }
+
+  p {
+    margin-top: 0;
+  }
+
+  .usa-accordion {
+    margin-bottom: 1rem;
+
+    &__button {
+      background-color: transparent;
+      background-position: right 0 center;
+      border-bottom: 1px solid $saguaro-green;
+      color: $big-bend-blue;
+      text-transform: uppercase;
+      padding-left: 0;
+    }
+
+    &__button[aria-expanded="false"] {
+      background-image: url("../_img/icons/accordion-toggle.svg");
+    }
+
+    &__button[aria-expanded="true"] {
+      background-image: url("../_img/icons/accordion-toggle-open.svg");
+    }
+
+    &__content {
+      background-color: transparent;
+      padding: 1rem 0;
+    }
+  }
+
+  .static-details-block {
+
+    &__content {
+
+      .usa-button {
+        background: transparent;
+        border: 3px solid $arches-red;
+        @include acc-font-size('fs-4');
+        color: $big-bend-blue;
+
+        &:hover,
+        &:active {
+          background-color: $arches-red;
+          border-color: $arches-red;
+          color: $white-sands;
+        }
+
+        &:focus {
+          outline-color: $white-sands;
+        }
+      }
+
+      &__cta-blurb {
+        align-items: center;
+        display: flex;
+        flex-direction: row;
+        margin-top: var(--acc-spacing-3);
+        margin-bottom: var(--acc-spacing-3);
+        @include acc-font-size('fs-5');
+        font-weight: 600;
+
+        img {
+          margin-right: var(--acc-spacing-2);
+        }
+
+        span {
+          display: block;
+        }
+      }
+    }
+  }
+
+}

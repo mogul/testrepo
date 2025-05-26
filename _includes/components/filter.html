@@ -1,0 +1,27 @@
+<section class="usa-section filters-block">
+
+  <div class="filters-block__listings">
+    <div class="number-of-positions filters-block__listings__positions loading"></div>
+
+    <div class="filters-block__listings__clear">
+      <button id="clear-filters" type="button">Clear filters</button>
+    </div>
+  </div>
+
+
+  <div id='filters-wrapper' class="filters-block__content-wrapper">
+
+    <div class="filters-block__content-wrapper__filter">
+      <form class="usa-form">
+        <label for="filter-unit">Unit / Department</label>
+        <select id="filter-unit" class="filters-block__content-wrapper__select usa-select " name="filter-unit" id="unit">
+          {% for options in dropdowns.units %}
+            <option value="{{ options.value }}">{{ options.name }}</option>
+          {% endfor %}
+        </select>
+      </form>
+    </div>
+
+  </div>
+
+</section>

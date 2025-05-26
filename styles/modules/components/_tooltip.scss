@@ -1,0 +1,12 @@
+/* Restyling the USWDS tooltips that appear on the individual position pages */
+
+.usa-tooltip {
+  bottom: -5px;
+
+  &__body {
+    background-color: $big-bend-blue;
+    color: $white-sands;
+    font-weight: 400;
+    line-height: 130%;
+  }
+}
